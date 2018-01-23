@@ -1,4 +1,10 @@
 # char-sortinator
 
+## How to run the app
+```
 yarn dev
-localhost:4000
+```
+## How to run tests
+```
+yarn test
+```
