@@ -4,19 +4,13 @@ const multer = require('multer');
 const app = express();
 const upload = multer();
 
+const sortStrDesc = require('./sort');
+
 app.use(express.static('public'));
 
 app.post('/save', upload.fields([]), (req, res) => {
     // sort input string
-    let sortedStr = req.body.unsorted.split('').sort((a, b) => {
-        if (a < b) {
-            return 1;
-        }
-        if (a > b) {
-            return -1;
-        }
-        return 0;
-    }).join('');
+    let sortedStr = sortStrDesc(req.body.unsorted);
 
     // send back the sorted string
     res.json(sortedStr);
