@@ -27,6 +27,7 @@ formEl.addEventListener('submit', function(evt) {
 
             cell1.innerHTML = formEl[0].value;
             cell2.innerHTML = sortedStr;
+            formEl[0].value = "";
         })
 });
 
